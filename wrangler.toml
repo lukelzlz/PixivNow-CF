@@ -1,4 +1,4 @@
-name = "pixiv-now-cf"
+name = "pixivnow"
 main = "src/worker.ts"
 compatibility_date = "2024-12-16"
 compatibility_flags = ["nodejs_compat"]
