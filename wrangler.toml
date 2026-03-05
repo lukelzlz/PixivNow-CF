@@ -12,11 +12,6 @@ routes = [
 [build]
 command = "npm run build:worker"
 cwd = "."
-watch_paths = ["src/worker.ts", "src/api/**"]
-
-[build.upload]
-format = "modules"
-main = "./dist/worker.js"
 
 [[analytics_engine_datasets]]
 binding = "ANALYTICS"
@@ -33,9 +28,3 @@ enabled = true
 head_sampling_rate = 1
 persist = true
 invocation_logs = true
-
-[observability.traces]
-enabled = false
-persist = true
-head_sampling_rate = 1
-
