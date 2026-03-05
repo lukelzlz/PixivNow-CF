@@ -1,0 +1,25 @@
+name = "pixiv-now-cf"
+main = "src/worker.ts"
+compatibility_date = "2024-12-16"
+compatibility_flags = ["nodejs_compat"]
+
+[env.production]
+name = "pixiv-now-cf-prod"
+routes = [
+  { pattern = "pixiv-now.lukelzlz.workers.dev/*", zone_name = "lukelzlz.top" }
+]
+
+[build]
+command = "npm run build:worker"
+cwd = "."
+watch_paths = ["src/worker.ts", "src/api/**"]
+
+[build.upload]
+format = "modules"
+main = "./dist/worker.js"
+
+[[analytics_engine_datasets]]
+binding = "ANALYTICS"
+
+[env.production.analytics_engine_datasets]
+binding = "ANALYTICS"
